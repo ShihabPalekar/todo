@@ -9,7 +9,7 @@ const App = () => {
   };
 
   const handleSubmit = () => {
-    const data = { id: todos.length + 1, value: todo };
+    const data = { id: `${Date.now()}`, value: todo };
     setTodos([...todos, data]);
     setTodo("");
   };
@@ -17,6 +17,8 @@ const App = () => {
   const removeTodo = (id:any) => {
     setTodos(todos.filter((i:any) => i.id !== id))
   }
+
+  console.log(todos)
 
   return (
     <div className="App">
